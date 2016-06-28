@@ -1,0 +1,69 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<form>
+  <div>
+      <label for="name">Place your bet between $5 and $10:</label>
+      <input type="text" id="bet" name="bet" />
+  </div>
+  <div>
+      <label for="name">Guess a number between 1 and 10:</label>
+      <input type="text" id="guess" name="guess" />
+  </div>
+  <input type="submit" />
+</form>
+
+<div id="#result"></div>
+
+<script>
+  var bankroll = 100;
+  console.log(The original bankroll is " + bankroll)
+
+  function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function gameplay(bet, guess) {
+    
+    while (bankroll > 0) {
+      var correctNumber = getRandom(1,10);
+      console.log("the answer is " + correctNumber)
+      var bet = $('#bet').val();
+      console.log("the user's bet is " + bet)
+      // if (bet < 5 || bet > 10) {
+      //   bet = prompt('Sorry, please enter a bet amount between 5 and 10');
+      // }
+      // if (bet > bankroll) {
+      //   bet = prompt('Sorry, you only have ' + bankroll + ' left to bet.');
+      // }
+
+      var guess = $('#guess').val();
+      console.log("the user's guess is " + guess)
+      // if (guess < 1 || guess > 10) {
+      //   guess = prompt('Please try again. Guesses must be between 1 and 10.')
+      // }
+
+
+        if (guess == correctNumber) {
+          bankroll = parseInt(bet) + parseInt(bankroll);
+          // $("#result").appendTo("<span>'You guessed correctly! Your bankroll is at $' + bankroll</span>")
+          alert('You guessed correctly! Your bankroll is at $' + bankroll);
+        } else if (guess == parseInt(correctNumber) + 1 || guess == parseInt(correctNumber) - 1) {
+          // $("#result").appendTo("<span>'You were sooooooo close! Your bankroll is remains at $' + bankroll</span>")
+          alert('You were sooooooo close! Your bankroll is remains at $' + bankroll);
+        } else {
+          bankroll = parseInt(bankroll) - parseInt(bet);
+          // $("#result").appendTo("<span>'You guessed incorrectly. Your bankroll is now $' + bankroll</span>")
+          alert('You guessed incorrectly. Your bankroll is now $' + bankroll);
+        }
+    }
+
+    if (bankroll == 0) {
+      bet = 0;
+      guess = 0; 
+      alert('Game over!');
+    }
+  }
+
+</script>
