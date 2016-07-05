@@ -1,0 +1,27 @@
+{
+  "name": "betting-game",
+  "version": "1.0.0",
+  "description": "betting game",
+  "main": "nodebetting.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jenreiher/betting-game.git"
+  },
+  "keywords": [
+    "node",
+    "betting",
+    "game"
+  ],
+  "author": "Jen Reiher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenreiher/betting-game/issues"
+  },
+  "homepage": "https://github.com/jenreiher/betting-game#readme",
+  "dependencies": {
+    "prompt-sync-history": "^1.0.1"
+  }
+}
