@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jenreiher/betting-game#readme",
   "dependencies": {
+    "prompt-sync": "^4.1.4",
     "prompt-sync-history": "^1.0.1"
   }
 }
